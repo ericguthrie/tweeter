@@ -1,48 +1,85 @@
 $(document).ready(function () {
 
-
+  //constructing the tweet box as designed in html
   const createTweetElement = function (tweet) {
-    let $tweet = `
-    <article class="posted-tweet">
+    return `
+  <article class="posted-tweet">
     <header> 
-      <div><img src= ${tweet.user.avatars}>
-      <h3>${tweet.user.name}</h3></div>
-       <h4>${tweet.user.handle}</h4>
+       <div>
+       <img src= ${tweet.user.avatars}>
+             <h3>${tweet.user.name}</h3>
+           </div>
+            <h4>${tweet.user.handle}</h4>
     </header>
-  <div><p>${tweet.content.text}</p></div>
-<footer>
-  <div>${tweet.created_at}</div>
-  <div>
-       <i class="fas fa-flag"></i>
-       <i class="fas fa-retweet"></i>
-       <i class="fas fa-heart"></i>
-      </div>
-</footer>
+        <div><p>${tweet.content.text}</p></div>
+    <footer>
+           <div>${new Date(tweet.created_at).toLocaleDateString('en-gb')}</div>
+        <div>
+          <i class="fas fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-heart"></i>
+        </div>
+    </footer>
 </article>
-    `
-    return $tweet;
+  `
   }
-  console.log(createTweetElement(tweetData));
 
-  const $tweet = createTweetElement(tweetData);
+  const renderTweets = function (tweets) {
+    for (let tweet of tweets) {
+      $('section.article').prepend(createTweetElement(tweet));
+    }
+  }
 
-  // Test / driver code (temporary)
-  console.log($tweet); // to see what it looks like
-  $('section.article').append($tweet);
+  //Ajax get request for tweet//
+
+  const loadTweets = function (renderTweets) {
+    $.ajax('/tweets/', {
+        method: 'GET'
+      })
+      .then(function (tweets) {
+        console.log('Success: ', tweets);
+        renderTweets(tweets);
+      });
+  };
+  //calling loadtweets function to renderTweets//
+  loadTweets(renderTweets);
+
+  $("form").on("submit", function (event) {
+
+    //slide-down error message if tweet is empty or null
+    event.preventDefault();
+    if ($("#tweet-text").val() === '' || $("#tweet-text").val() === null) {
+      $("#errorMessages").empty().append("<p>Please make a tweet!!!</p>").hide();
+      if ($("#errorMessages").first().is(":hidden")) {
+        $("#errorMessages").slideDown("slow").addClass("red-error")
+      }
+    //slide-down error message if tweet is too long
+    } else if ($("#tweet-text").val().length > 140) {
+      $("#errorMessages").empty().append("<p>Your tweet is too long!!!</p>").hide();
+      if ($("#errorMessages").first().is(":hidden")) {
+        $("#errorMessages").slideDown("slow").addClass("red-error")
+      }
+      // Ajax post request for tweet
+    } else {
+      let str = $(this).serialize();
+      console.log("string?", str)
+
+      $.ajax({
+        data: str,
+        url: "/tweets/",
+        method: "POST",
+      }).then((result) => {
+        console.log("tweets?", result)
+        $("#errorMessages").hide();
+        $("#tweet-text").val('');
+        loadTweets(renderTweets);
+        //resetting the textarea after tweet is made
+        $("#character-counter").html(140);
+      }).catch(err => {
+        //checking for erros in developer tool
+        console.log('ajax error caught');
+        console.log(err);
+      });
+    }
+  });
 });
-
-
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-}
-
-// to add it to the page so we can make sure it's got all the right elements, classes, etc.
