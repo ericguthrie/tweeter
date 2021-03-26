@@ -6,20 +6,84 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
+nav {
+  color: #545149;
+}
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: bisque;
   font-size: 24px;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+main.container {
+  display: flex;
+  margin: 5%;
+  text-align: center;
+  background-color: bisque;
+  max-width: 1200px;
+}
+
+main.container h2 {
+  color: #545149;
+}
+
+.posted-tweet {
+  margin: 20px;
+  border-style: solid;
+  opacity: 0.8;
+  transition: box-shadow .3s;
+}
+
+.posted-tweet:hover {
+  box-shadow: 10px 20px 20px rgba(33, 33, 33, .2);
+  opacity: 1;
+}
+
+.posted-tweet header {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+
+.posted-tweet header h4 {
+  display: none;
+}
+
+.posted-tweet:hover header h4 {
+  display: flex;
+}
+
+.posted-tweet p {
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.posted-tweet footer {
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 3px solid #545149;
+
+}
+
+#tweet-text {
+  margin-top: 1%;
+}
+
+.fas {
+  font-size: 12px;
+}

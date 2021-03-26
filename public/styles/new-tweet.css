@@ -1,0 +1,75 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+textarea {
+  width: 100%;
+  height: 55px;
+  resize: none;
+  border: none;
+  background: transparent;
+}
+
+.borderstuff {
+  border-top: 3px solid #545149;
+  padding-top: 10px;
+}
+
+button {
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'Bungee', cursive;
+  background-color: #4056A1;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 1px;
+  cursor: pointer;
+}
+
+div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.red-counter {
+  color: red;
+}
+
+.red-error {
+  color: red;
+  border: 2px solid red;
+  display: flex;
+  font-family: sans-serif;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+@media only screen and (min-width: 1024px) {
+  .red-error {
+    color: red;
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+  }
+}
+
+output.counter {
+  display: flex;
+  align-items: column;
+  justify-content: flex-end;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid;
+}

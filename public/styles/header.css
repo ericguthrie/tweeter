@@ -1,0 +1,48 @@
+/* 
+head {
+  max-width: 1200px;
+} */
+
+.main-header {
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 120px;
+  height: 400px;
+  width: 100%;
+  background-color: rgb(92, 90, 89);
+  background-image: url("https://www.transparenttextures.com/patterns/binding-light.png");
+  min-width: 320px;
+  max-width: 1100px;
+}
+
+h5 {
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+h2 {
+  margin-top: 0%;
+  color: azure;
+}
+
+@media only screen and (min-width: 1024px) {
+  .main-header {
+    width: 33.3%;
+    float: left;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  #text-area {
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+
+  }
+}
