@@ -6,6 +6,7 @@ This repository is a blend of HTML, CSS, JS, jQuery and AJAX. Express and MongoD
 
 ## Screen Shots
 ! ["Screen shot of Desktop front-page"]https://github.com/ericguthrie/tweeter/blob/master/docs/Desktop-tweeter.png?raw=true
+
 ! ["Screen shot of mobile front-page"]https://github.com/ericguthrie/tweeter/blob/master/docs/Mobile-tweeter.png?raw=true
 
 
