@@ -6,6 +6,7 @@ This repository is a blend of HTML, CSS, JS, jQuery and AJAX. Express and MongoD
 
 ## Screen Shots
 https://github.com/ericguthrie/tweeter/blob/master/docs/Desktop-tweeter.png?raw=true
+https://github.com/ericguthrie/tweeter/blob/master/docs/Mobile-tweeter.png?raw=true
 
 
 ## Getting Started
