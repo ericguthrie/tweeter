@@ -5,8 +5,8 @@ Tweeter is a simple, single-page Twitter clone.
 This repository is a blend of HTML, CSS, JS, jQuery and AJAX. Express and MongoDB for the back-end.
 
 ## Screen Shots
-!["Screen shot of Desktop front-page"]https://github.com/ericguthrie/tweeter/blob/master/docs/Desktop-tweeter.png?raw=true
-!["Screen shot of mobile front-page"]https://github.com/ericguthrie/tweeter/blob/master/docs/Mobile-tweeter.png?raw=true
+! ["Screen shot of Desktop front-page"]https://github.com/ericguthrie/tweeter/blob/master/docs/Desktop-tweeter.png?raw=true
+! ["Screen shot of mobile front-page"]https://github.com/ericguthrie/tweeter/blob/master/docs/Mobile-tweeter.png?raw=true
 
 
 ## Getting Started
