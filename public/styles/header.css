@@ -1,8 +1,3 @@
-/* 
-head {
-  max-width: 1200px;
-} */
-
 .main-header {
   font-family: monospace;
   display: flex;
@@ -31,6 +26,7 @@ h2 {
   color: azure;
 }
 
+/* screen changes after it bigger than  1024px */
 @media only screen and (min-width: 1024px) {
   .main-header {
     width: 33.3%;
@@ -43,6 +39,5 @@ h2 {
     width: 90%;
     display: flex;
     justify-content: flex-start;
-
   }
 }

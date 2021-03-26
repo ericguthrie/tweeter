@@ -38,10 +38,12 @@ div {
   justify-content: space-between;
 }
 
+/* counter above limit class */
 .red-counter {
   color: red;
 }
 
+/* error class for ajax post */
 .red-error {
   color: red;
   border: 2px solid red;
@@ -51,6 +53,7 @@ div {
   margin-top: 5%;
 }
 
+/* changes error margin if scree is above 1024 pixels so it fits */
 @media only screen and (min-width: 1024px) {
   .red-error {
     color: red;
